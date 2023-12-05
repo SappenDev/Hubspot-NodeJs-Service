@@ -10,7 +10,7 @@ export const handler = async (event) => {
     const body = event.body instanceof Object ? event.body : JSON.parse(event.body);
 
     const responseData = await hubspotClient.crm.contacts.basicApi.create(body);
-
+    
     return {
         statusCode: 201, // Código de estado HTTP exitoso
         body: responseData.body, // Cuerpo de la respuesta
